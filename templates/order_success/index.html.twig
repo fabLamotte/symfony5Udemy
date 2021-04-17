@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de commande | La Boutique Française{% endblock %}
+
+{% block content %}
+
+    <h2>Confirmation de commande</h2>
+    <p>
+        Bonjour {{ order.user.firstname }}  {{ order.user.lastname }},<br /><br />
+        Nous vous remercions pour votre commande n°{{ order.reference }}<br />
+        Une confirmation vient de vous être envoyé par email à l'adresse {{ order.user.email }}
+        <hr>
+        Votre commande sera livré par {{ order.carrierName }} à l'adresse suivante: <br />
+        {{ order.delivery|raw }}
+        <hr>
+        Pour suivre votrre commande, rendez-vous dans <a href="{{ path('account_order') }}">votre compte</a>
+    </p>
+
+{% endblock %}

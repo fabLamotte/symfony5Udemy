@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur dans la commande | La boutique Française{% endblock %}
+
+{% block content %}
+<h2>Erreur de paiement</h2>
+    <p>
+        Bonjour {{ order.user.firstname }}  {{ order.user.lastname }},<br /><br />
+        Il semblerait que votre paiement viens d'échouer pour votre commande n°{{ order.reference }}<br />
+        Une confirmation d'erreur viens de vous être envoyé par email à l'adresse {{ order.user.email }}
+        <hr>
+        <a href="{{ path('order') }}" class="btn btn-success">Rééssayer le paiement</a>
+    </p>
+{% endblock %}
